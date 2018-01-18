@@ -29,7 +29,7 @@ AutoPlay.preNightMode = function() { var h=(new Date).getHours(); return(h>=22);
 
 AutoPlay.nightMode = function() { 
   var h=(new Date).getHours();
-  if(h>=7 && h<23) { // be active
+  if(h>=1 && h<23) { // be active
     if (AutoPlay.night) AutoPlay.useLump();
     AutoPlay.night=false;
     var gs=Game.Upgrades["Golden switch [on]"]; if(gs.unlocked) {
@@ -488,7 +488,7 @@ function range(start, end) {
 
 if (AutoPlay.autoPlayer) { AutoPlay.info("replacing old version of autoplay"); clearInterval(AutoPlay.autoPlayer); }
 if (Game.version == AutoPlay.gameVersion) {
-  AutoPlay.autoPlayer = setInterval(AutoPlay.run, 300); // was 100 before, but that is too quick
+  AutoPlay.autoPlayer = setInterval(AutoPlay.run, 100); // was 100 before, but that is too quick
   AutoPlay.findNextAchievement();
   l('versionNumber').innerHTML='v. '+Game.version+" (with autoplay v."+AutoPlay.version+")";
 } else info("cookieBot works only with cookie clicker version " + gameVersion);
