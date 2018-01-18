@@ -29,7 +29,7 @@ AutoPlay.preNightMode = function() { var h=(new Date).getHours(); return(h>=22);
 
 AutoPlay.nightMode = function() { 
   var h=(new Date).getHours();
-  if(h>=1 && h<23) { // be active
+  if(h>=7 && h<23) { // be active
     if (AutoPlay.night) AutoPlay.useLump();
     AutoPlay.night=false;
     var gs=Game.Upgrades["Golden switch [on]"]; if(gs.unlocked) {
